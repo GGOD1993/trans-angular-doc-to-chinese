@@ -1,0 +1,3 @@
+angular.forEach
+对于obj这个集合，这个集合可以是一个对象或者是一个数组，对其中的元素依次调用iterator函数。这个interator函数是以iterator(value, key, obj)这种形式来调用的，其中的value是一个对象的属性或者是一个数组的元素，key是一个对象的属性的字段或者是数组中的数组下标，obj就是一个对象。是否指定一个context是可选的。
+
