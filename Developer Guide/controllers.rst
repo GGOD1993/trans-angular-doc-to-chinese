@@ -1,14 +1,19 @@
 controllers
+
 理解controllers
+
 在angular中，一个controller是一个JavaScript结构的函数，可以用来扩展Angular Scope.
 
 当一个控制器通过ng-controller指令附加在DOM上的时候，Angular会实例化一个新的Controller对象，使用指定的控制器的构造函数。一个新的子范围会作为控制器构造函数中的$scope注入为其参数。
 
 使用controllers来：
+
 	设置$scope对象的最初的状态。
+  
 	向$scope对象添加行为。
 
 不用controllers的地方：
+
 	操纵DOM —— Controllers应该只包含业务逻辑。把程序底层的逻辑放在Controllers里面很明显会影响它的可测试性。Angular在大多数情况下都会有数据绑定和封装手动操作DOM的指令。
 	格式化输入 —— 使用angular form controls来代替。
 	过滤输出 —— 用angular filters来代替。

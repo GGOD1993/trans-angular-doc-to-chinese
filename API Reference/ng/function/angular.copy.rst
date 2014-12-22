@@ -1,4 +1,7 @@
+finished by GGOD1993
+
 angular.copy
+
 对source进行一个深度的复制，这个source应该是一个对象或者数组。
 如果没有提供destination,对于数组或者对象的复制将会被创建。
 如果destination被提供，它的所有元素（对数组来说）或者所有属性（对对象来说）会被删除然后来自source的所有元素/属性会被复制过去。
@@ -6,14 +9,21 @@ angular.copy
 如果source和destination是相同的，一个错误会被抛出。
 
 用法：
+
 angular.copy(source, [destination]);
 
 参数:
+
 source 	*	source会被用来制作其副本。可以是任何类型的，包括primitives,null和undefined.
+
 destination(optional)	Object/Array	destination用来存储source的拷贝内容，如果提供了，那么必须和source的类型是一样的。
+
 返回值：
+
 source的副本或更新过的destination.如果destination被指定的话。
+
 例子：
+
 <div ng-controller="ExampleController">
 <form novalidate class="simple-form">
 Name: <input type="text" ng-model="user.name" /><br />

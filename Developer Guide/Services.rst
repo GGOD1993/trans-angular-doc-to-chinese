@@ -1,6 +1,11 @@
+finished by GGOD1993
+
 Services
+
 Angular服务是通过依赖注入连接在一起的可替代对象。你可以用services来组织和分享你的应用程序中的代码。
+
 Angualr services是：
+
 	惰性实例化：Angular只有当应用程序的某个组件依赖于它的时候才会实例化一个service.
 	单一的：每个组件只依赖于一个服务，从一个单一的服务内取得参数。
 
@@ -8,9 +13,11 @@ Angular提供很多有用的服务（像$http），但是对于大部分的应�
 注意：就像其他核心Angular指令集，内建的服务通常以$打头（例如：$http）。
 
 使用一个服务：
+
 要想使用Angular service，你应该把它作为一个需要service作为依靠的组件的依赖项。Angular的依赖注入的这一子功能会进行余下的任务。
 
 index.html:
+
 <div id="simple" ng-controller="MyController">
   <p>Let's try this simple notify service, injected into the controller...</p>
   <input ng-init="message='test'" ng-model="message" >
@@ -19,6 +26,7 @@ index.html:
 </div>
 
 script.js:
+
 angular.
 module('myServiceModule', []).
  controller('MyController', ['$scope','notify', function ($scope, notify) {
@@ -38,15 +46,18 @@ factory('notify', ['$window', function(win) {
  }])
 
  protractor.js:
+
  it('should test service', function() {
   expect(element(by.id('simple')).element(by.model('message')).getAttribute('value'))
       .toEqual('test');
 });
 
 创建Services:
+
 应用程序开发者可以通过注册服务名和服务的工厂函数来定义它们自己的服务，通过Angular的模式。服务工厂函数生成一个代表应用程序的剩下的服务的单例对象或者函数。这个由service返回的对象或者函数是注册在service里面指定为依赖项的任何一个组件。
 
 注册Services:
+
 Service通过Module API注册服务。通常你使用Module#API来注册一个Service:
 var myModule = angular.module('myModule', []);
 myModule.factory('serviceId', function() {
@@ -57,6 +68,7 @@ myModule.factory('serviceId', function() {
 注意你注册的不是一个service实例，而是一个工厂函数，当你呼叫它的时候你才能创建这个实例。
 
 依赖项：
+
 Services可以有自己的依赖项。就像在controller里面声明一个依赖项一样，你可以通过在一个services的工厂函数指出依赖项来声明它们。
 
 想了解更多关于依赖项的内容，参考依赖注入文档。
@@ -101,6 +113,7 @@ batchModule.factory('routeTemplateMonitor', ['$route', 'batchLog', '$rootScope',
   }]);
 
 在这个例子里面，注意：
+
 batchLog这个服务依赖于内建服务指令$interval和$log。
 routeTemplateMonitor服务依赖于内建指令$route和我们自定义的服务指令batchLog.
 
@@ -120,6 +133,7 @@ angular.module('myModule', []).config(['$provide', function($provide) {
 这个技术经常用在测试单元来模拟出一个服务的依赖项。
 
 测试单元：
+
 下面是一个关于上面如何创建Angular Services的测试单元。这个单元使用了一种Jasmine spy(模仿)的方法，而不是浏览器警告。
 
 var mock, notify;
@@ -164,8 +178,10 @@ it('should clear messages after alert', function() {
 });
 
 相关的主题：
+
 AngularJS中的依赖注入。
 
 相关的API:
+
 Angular Service API
 Injector API
